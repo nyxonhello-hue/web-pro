@@ -13,7 +13,7 @@ if (hamburger && mobileMenu) {
 // Close menu on tab click (mobile)
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 768 && hamburger && mobileMenu) {
       hamburger.classList.remove('active');
       mobileMenu.classList.remove('active');
     }
@@ -30,10 +30,15 @@ function updateActiveTab() {
     const el = document.getElementById(section);
     if (el && el.offsetTop <= scrollPos && scrollPos < (el.offsetTop + el.offsetHeight)) {
       tabs.forEach(tab => tab.classList.remove('active'));
-      document.querySelector(`[data-tab="${section}"]`).classList.add('active');
+      const activeTab = document.querySelector(`[data-tab="${section}"]`);
+      if (activeTab) {
+        activeTab.classList.add('active');
+      }
     }
   });
 }
+
+window.addEventListener('load', updateActiveTab);
 
 document.querySelectorAll('.tab').forEach(tab => {
   tab.addEventListener('click', () => {
@@ -43,6 +48,15 @@ document.querySelectorAll('.tab').forEach(tab => {
 });
 
 window.addEventListener('scroll', updateActiveTab);
+
+// Close mobile menu when switching to desktop size
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 768 && hamburger && mobileMenu) {
+    hamburger.classList.remove('active');
+    mobileMenu.classList.remove('active');
+  }
+  updateActiveTab();
+});
 
 function scrollToSection(id) {
   document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
