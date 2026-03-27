@@ -1,5 +1,25 @@
-
 /* ================= SCRIPT.JS ================= */
+// Hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+if (hamburger && mobileMenu) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+  });
+}
+
+// Close menu on tab click (mobile)
+document.querySelectorAll('.tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      hamburger.classList.remove('active');
+      mobileMenu.classList.remove('active');
+    }
+  });
+});
+
 // Tab navigation
 function updateActiveTab() {
   const tabs = document.querySelectorAll('.tab');
@@ -65,17 +85,18 @@ document.querySelectorAll('.card, .neon, .links a').forEach(el => {
   el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
 });
 
+
+
 // particles
 const canvas = document.getElementById('particles');
 
-// Contact form handler
-document.querySelector('#contact form').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  const name = formData.get('name') || 'Anonymous';
-  alert(`Transmission sent to nyxon.hello@gmail.com!\nThank you, ${name}!`);
-  e.target.reset();
-});
+// Canvas resize handler
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resizeCanvas);
+
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -96,6 +117,8 @@ function animate() {
   particles.forEach(p => {
     p.x += p.vx;
     p.y += p.vy;
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
     ctx.fillRect(p.x, p.y, 2, 2);
   });
   requestAnimationFrame(animate);

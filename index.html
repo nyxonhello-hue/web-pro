@@ -5,15 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Minato | Final Form</title>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <canvas id="particles"></canvas>
 
 <header>
-    <nav class="tab-nav">
+<nav class="tab-nav">
       <h1 class="logo">MINATO SIBRI</h1>
-      <ul class="tabs">
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="tabs mobile-menu">
         <li><a href="#home" class="tab active" data-tab="home">Home</a></li>
         <li><a href="#about" class="tab" data-tab="about">About</a></li>
         <li><a href="#skills" class="tab" data-tab="skills">Skills</a></li>
@@ -46,6 +53,7 @@
     <div class="skill"><p>C++</p><div class="bar"><span style="width:85%"></span></div></div>
     <div class="skill"><p>SQL (PostgreSQL)</p><div class="bar"><span style="width:80%"></span></div></div>
     <div class="skill"><p>Flutter</p><div class="bar"><span style="width:75%"></span></div></div>
+    <div class="skill"><p>Web Development</p><div class="bar"><span style="width:85%"></span></div></div>
   </section>
 
   <!-- PROJECTS -->
@@ -53,15 +61,15 @@
     <h2 class="reveal">Projects</h2>
     <div class="grid">
 
-      <div class="card reveal">
-<img src="images/nyxon logo.png" alt="Nyxon Tech Services Logo" style="height: 200px; object-fit: cover; width: 100%;">
+<div class="card reveal">
+        <img src="images/nyxon logo.png" alt="Nyxon Tech Services Logo" class="card-img" loading="lazy" width="300" height="250" sizes="(max-width: 768px) 100vw, 300px">
         <h3>Nyxon Tech Services</h3>
         <p>Tech service brand offering repairs, installations, and data recovery.</p>
         <span>Business | Tech Support</span>
       </div>
 
-      <div class="card reveal">
-        <img src="images/my pic.jpg" alt="Minato Profile" style="height: 200px; object-fit: cover; width: 100%;">
+<div class="card reveal">
+        <img src="images/my pic.jpg" alt="Minato Profile" class="card-img" loading="lazy" width="300" height="250" sizes="(max-width: 768px) 100vw, 300px">
         <h3>Minato Profile</h3>
         <p>Personal portfolio showcase.</p>
         <span>Portfolio</span>
@@ -116,17 +124,33 @@
     </div>
   </section>
 
-  <section id="contact" class="glass reveal">
-    <h2>Contact</h2>
-    <div class="contact-info">
-      📧 <a href="mailto:nyxon.hello@gmail.com">nyxon.hello@gmail.com</a>
+<section id="contact" class="glass reveal contact-section">
+    <div class="contact-container">
+      <div class="contact-headline">
+        <h2>Let's Work Together</h2>
+        <p>I'm always excited to hear about new projects and opportunities.</p>
+      </div>
+      
+      <div class="contact-grid">
+        <!-- Left Column: Info -->
+        <div class="contact-left">
+          <div class="portrait">
+            <img src="images/my pic.jpg" alt="Minato Sibri - Creative Professional" loading="lazy" width="300" height="300" sizes="(max-width: 768px) 180px, 300px">
+          </div>
+          <div class="contact-details">
+            <a href="mailto:nyxon.hello@gmail.com" class="contact-email">nyxon.hello@gmail.com</a>
+            <p class="contact-location">Accra, Ghana</p>
+
+          </div>
+        </div>
+        
+        <div class="whatsapp-cta">
+          <a href="https://wa.me/233538679562?text=Hi%20Minato!%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." class="whatsapp-btn" target="_blank" aria-label="Contact via WhatsApp">
+            WhatsApp Me
+          </a>
+        </div>
+      </div>
     </div>
-    <form>
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button class="neon" type="submit">SEND TRANSMISSION</button>
-    </form>
   </section>
 
   <footer>
