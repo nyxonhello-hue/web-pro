@@ -644,3 +644,178 @@ canvas {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
+
+/* ================= ACHIEVEMENTS ================= */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.achievement-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: rgba(0,255,255,0.03);
+  border: 1px solid rgba(0,255,255,0.15);
+  border-radius: 10px;
+  padding: 1.2rem;
+  transition: 0.3s;
+}
+
+.achievement-card:hover {
+  border-color: cyan;
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+  transform: translateY(-3px);
+}
+
+.ach-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.ach-content h3 {
+  font-size: 1rem;
+  color: cyan;
+  margin: 0 0 0.4rem 0;
+  text-shadow: 0 0 8px rgba(0,255,255,0.5);
+}
+
+.ach-content p {
+  font-size: 0.82rem;
+  color: #aaa;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ================= SKILLS CATEGORIES ================= */
+.skills-category {
+  margin-bottom: 1.8rem;
+}
+
+.skills-cat-title {
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: cyan;
+  opacity: 0.7;
+  margin: 0 0 0.8rem 0;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid rgba(0,255,255,0.15);
+}
+
+/* ================= PROJECT CARDS ENHANCED ================= */
+.card {
+  position: relative;
+}
+
+.card-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.card-badge.live {
+  background: rgba(0,255,100,0.15);
+  border: 1px solid rgba(0,255,100,0.4);
+  color: #00ff64;
+}
+
+.card-badge.android {
+  background: rgba(0,200,255,0.12);
+  border: 1px solid rgba(0,200,255,0.3);
+  color: #00c8ff;
+}
+
+.card-badge.app {
+  background: rgba(255,200,0,0.12);
+  border: 1px solid rgba(255,200,0,0.3);
+  color: #ffc800;
+}
+
+.card-badge.client {
+  background: rgba(255,100,200,0.12);
+  border: 1px solid rgba(255,100,200,0.3);
+  color: #ff64c8;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.8rem 0;
+  justify-content: center;
+}
+
+.card-tags span {
+  background: rgba(0,255,255,0.08);
+  border: 1px solid rgba(0,255,255,0.2);
+  color: cyan;
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+}
+
+.card-links {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-top: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.card-link {
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.card-link.primary {
+  background: rgba(0,255,255,0.1);
+  border: 1px solid cyan;
+  color: cyan;
+}
+
+.card-link.primary:hover {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 15px cyan;
+}
+
+.card-link.secondary {
+  background: rgba(255,200,0,0.1);
+  border: 1px solid #ffc800;
+  color: #ffc800;
+}
+
+.card-link.secondary:hover {
+  background: #ffc800;
+  color: black;
+}
+
+@media (max-width: 640px) {
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  .achievement-card {
+    padding: 1rem;
+  }
+}

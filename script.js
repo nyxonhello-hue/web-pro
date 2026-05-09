@@ -23,7 +23,7 @@ document.querySelectorAll('.tab').forEach(tab => {
 // Tab navigation
 function updateActiveTab() {
   const tabs = document.querySelectorAll('.tab');
-  const sections = ['home', 'about', 'skills', 'projects', 'services', 'contact'];
+  const sections = ['home', 'about', 'skills', 'achievements', 'projects', 'services', 'contact'];
   const scrollPos = window.scrollY + 100;
 
   sections.forEach(section => {
